@@ -12,10 +12,20 @@ import {
   Quote,
   Slide,
   Text,
+  CodePane,
+  Link
 } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
+
+// Import CodePane files
+import id from './assets/id.js'
+import classSelector from './assets/class.js'
+import addRemoveClass from './assets/addRemoveClass.js'
+import showHide from './assets/showHide.js'
+import fetch from './assets/fetch.js'
+import axios from './assets/axios.js'
 
 // Require CSS
 require('normalize.css');
@@ -50,44 +60,82 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
+          <Heading size={6} textColor="primary">
+            Disadvantages of jQuery
           </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
+          <List>
+            <ListItem><em>File Size</em> - jQuery 3.3.1 minified is 85kb</ListItem>
+            <ListItem><em>Abstraction</em> - jQuery expresses everything in a DOM-centric paradigm</ListItem>
+            <ListItem><em>Performance</em> - Native JS will always be faster</ListItem>
+          </List>
         </Slide>
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
-            Standard List
+            Things That jQuery Did That We Don't Need Anymore
           </Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+        </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary">
+            ID Selector
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={id}
+          />
+          <Heading size={6} textColor="primary">
+            Class Selector
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={classSelector}
+          />
+        </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary">
+            Adding / Removing Classes
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={addRemoveClass}
+          />
+        </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary">
+            Show / Hide Elements
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={showHide}
+          />
+        </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary">
+            Replaceing AJAX
+          </Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={6} textColor="primary">
+            Fetch
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={fetch}
+          />
+          <Heading size={6} textColor="primary">
+            Axios
+          </Heading>
+          <CodePane 
+          lang='javascript' 
+          source={axios}
+          />
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        <Heading size={1} textColor="primary" fill>
+            Attribution
+        </Heading>
+        <Link href="https://hackernoon.com/you-truly-dont-need-jquery-5f2132b32dd1" target="_blank">
+              --Hackernoon Article by Doug Miller
+        </Link>
         </Slide>
       </Deck>
     );
