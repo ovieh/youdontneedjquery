@@ -110,7 +110,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
           <Heading size={6} textColor="primary">
-            Replaceing AJAX
+            Replacing AJAX
           </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
